@@ -1,20 +1,15 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
- *
- * This class was written as an early example for teaching Java with BlueJ.
+ * This class represents a simple picture of a person standing in front of his strangly odd colored house. I created this class to demonstrate the ability to toggle black and white viewing. 
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
- */
+ * @author Austin Nass
+ * @version 2023.02.30 */
 public class Picture
 {
     private Square wall;
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Person Person;
     private boolean drawn;
 
     /**
@@ -26,6 +21,7 @@ public class Picture
         window = new Square();
         roof = new Triangle();  
         sun = new Circle();
+        Person = new Person();
         drawn = false;
     }
 
@@ -40,19 +36,24 @@ public class Picture
             wall.changeSize(120);
             wall.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
+            window.changeColor("yellow");
+            window.moveHorizontal(-100);
             window.moveVertical(40);
             window.changeSize(40);
             window.makeVisible();
     
-            roof.changeSize(60, 180);
+            roof.changeSize(60, 200);
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
             roof.makeVisible();
+            
+            Person.changeSize(60, 60);
+            Person.moveHorizontal(10);
+            Person.moveVertical(40);
+            Person.makeVisible();
     
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
+            sun.changeColor("blue");
+            sun.moveHorizontal(80);
             sun.moveVertical(-40);
             sun.changeSize(80);
             sun.makeVisible();
@@ -69,6 +70,8 @@ public class Picture
         window.changeColor("white");
         roof.changeColor("black");
         sun.changeColor("black");
+        Person.changeColor("Black");
+        drawn = true;
     }
 
     /**
@@ -80,5 +83,7 @@ public class Picture
         window.changeColor("black");
         roof.changeColor("green");
         sun.changeColor("yellow");
+        Person.changeColor("Blue");
+        drawn = true;
     }
 }
